@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penjumlahan Variabel</title>
+    <script>
+        let angka = 10;
+        let teks = "saya belajar javascript";
+
+        let hasil = angka + teks;
+        console.log("Hasil penjumlahan angka dan teks:", hasil);
+
+        let angkaTambahan = 5;
+        let hasilBaru = angka + angkaTambahan;
+        console.log("Hasil penjumlahan angka dan angkaTambahan:", hasilBaru);
+    </script>
+</head>
+<body>
+    <h1>Hasil Penjumlahan</h1>
+    <p id="output"></p>
+    <script>
+        document.getElementById("output").innerText = "Hasil penjumlahan angka dan angkaTambahan: " + hasilBaru;
+    </script>
+</body>
+</html>
