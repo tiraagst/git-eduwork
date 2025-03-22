@@ -1,0 +1,20 @@
+{
+  "name": "cypresstesting",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "test:login":"cypress run --spec 'cypress/e2e/SauceDemoLogin.cy.js'",
+    "test:product":"cypress run --spec 'cypress/e2e/SauceDemoProductPage.cy.js'",
+    "test:cart":"cypress run --spec 'cypress/e2e/CartPage.cy.js'",
+    "test:checkout":"cypress run --spec 'cypress/e2e/CheckoutPage.cy.js'",
+    "test:overview":"cypress run --spec 'cypress/e2e/CheckoutOverviewPage.cy.js'",
+    "test:finish":"cypress run --spec 'cypress/e2e/CheckoutFinishPage.cy.js'"
+  },
+  "author": "Tira",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "cypress": "^14.0.2"
+  }
+}
