@@ -23,3 +23,19 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+Cypress.Commands.add('payBill', (payee, amount, date, description) => {
+    cy.get('#pay_bills_tab').click();
+
+    cy.get('#sp_payee').select(payee);
+    cy.get('#sp_account').select('Checking');
+    cy.get('#sp_amount').type(amount);
+    cy.get('#sp_date').type(date);
+    cy.get('[for="sp_description"]').click();
+    cy.get('#sp_description').type(description);
+    cy.get('#pay_saved_payees').click();
+
+    cy.get('#alert_content')
+      .should('be.visible')
+      .and('contain', 'The payment was successfully submitted.');
+});
