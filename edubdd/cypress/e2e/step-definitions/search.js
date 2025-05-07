@@ -1,16 +1,14 @@
-const { Given, When, Then } = require ('@badeball/cypress-cucumber-preprocessor');
+const { Given, When, Then } = require('@badeball/cypress-cucumber-preprocessor');
+import SearchPage from '../../support/pages/SearchPage';
 
-    Given('I open the zero bank homepage', () => {
-        cy.visit('http://zero.webappsecurity.com/');  
-    });  
+Given('I open the Zero Bank homepage', () => {
+  SearchPage.visit();
+});
 
-    When('I type "online" into the searchbox', () => {
-        cy.get('#searchTerm').type('online {enter}');
-        cy.wait(1000);
-    }); 
+When('I type {string} into the searchbox', (keyword) => {
+  SearchPage.typeSearchKeyword(keyword);
+});
 
-    Then('I should see results that contain the word "online"', () => {
-        cy.get('h2').contains('Search Results:');
-        cy.url().should('include', 'search.html');
-        cy.get('ul li a').contains('Online').should('exist');
-    });
+Then('I should see results that contain the word {string}', (keyword) => {
+  SearchPage.verifySearchResult(keyword);
+});
