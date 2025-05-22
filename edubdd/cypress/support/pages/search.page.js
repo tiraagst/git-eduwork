@@ -11,7 +11,6 @@ class SearchPage {
       cy.get('h2').should('contain.text', 'Search Results');
       cy.get('.top_offset').should('contain.text', keyword);
     }
-  }
+}
   
   export default new SearchPage();
-  
